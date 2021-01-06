@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>UML</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col column menu-left">
+					<div class="h6 mt-2">Shapes :</div>
+					<button class="btn btn-light component d-block">
+						<div class="shape shape-square">My<br>Content</div>
+					</button>
+					<div class="h6 mt-2">Connectors :</div>
+					<input id="arrow-text" type="text" class="form-control" value="" placeholder="Text arrow" />
+					<button id="arrow-line" class="btn btn-light d-block mt-2 connector">
+						<div class="arrow">
+							<div class="arrow-line"></div>
+						</div>
+					</button>
+					<button id="arrow-point" class="btn btn-light d-block mt-2 connector">
+						<div class="arrow">
+							<div class="arrow-line"></div>
+							<div class="arrow-point"></div>
+						</div>
+					</button>
+					<button id="arrow-fill" class="btn btn-light d-block mt-2 connector">
+						<div class="arrow">
+							<div class="arrow-line"></div>
+							<div class="arrow-fill"></div>
+						</div>
+					</button>
+				</div>
+				<div class="column grid">
+					<div id="drop">
+						<canvas id="canvas"></canvas>
+					</div>
+				</div>
+				<div class="col column menu-right">
+					<div class="h6 mt-2">Content :</div>
+					<textarea id="content" class="form-control" disabled></textarea>
+					
+					<div class="h6 mt-2">Background color :</div>
+					<input id="background" type="color" class="form-control color" value="#ffffff" disabled />
+					<div class="h6 mt-3">Text align :</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="custom-control custom-radio">
+								<input type="radio" id="left" name="h-align" class="custom-control-input" value="flex-start" disabled />
+								<label class="custom-control-label" for="left">Left</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="center" name="h-align" class="custom-control-input" value="center" disabled />
+								<label class="custom-control-label" for="center">Center</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="right" name="h-align" class="custom-control-input" value="flex-end" disabled />
+								<label class="custom-control-label" for="right">Right</label>
+							</div>
+						</div>
+						<div class="col-6 pl-0">
+							<div class="custom-control custom-radio">
+								<input type="radio" id="top" name="v-align" class="custom-control-input" value="flex-start" disabled />
+								<label class="custom-control-label" for="top">Top</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="middle" name="v-align" class="custom-control-input" value="center" disabled />
+								<label class="custom-control-label" for="middle">Middle</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="bottom" name="v-align" class="custom-control-input" value="flex-end" disabled />
+								<label class="custom-control-label" for="bottom">Bottom</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="h6 mt-3">Text size :</div>
+					<input id="textsize" type="number" class="form-control" min="10" max="60" disabled />
+					
+					<div class="h6 mt-3">Text familly :</div>
+					<input list="family" id="textfamily" class="form-control" disabled />
+					<datalist id="family">
+						<option value="serif" />
+						<option value="sans-serif" />
+						<option value="monospace" />
+						<option value="cursive" />
+						<option value="fantasy" />
+					</datalist>
+					
+					<div class="h6 mt-3">Text style :</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" id="textbold" class="custom-control-input" value="bold" disabled />
+								<label class="custom-control-label" for="textbold">Bold</label>
+							</div>
+						</div>
+						<div class="col-6 pl-0">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" id="textitalic" class="custom-control-input" value="italic" disabled />
+								<label class="custom-control-label" for="textitalic">Italic</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" id="textunderline" class="custom-control-input" value="underline" disabled />
+								<label class="custom-control-label" for="textunderline">Underline</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="h6 mt-3">Text color :</div>
+					<input id="textcolor" type="color" class="form-control color" value="#000000" disabled />
+					
+					<div class="h6 mt-3">Connector :</div>
+					<select id="arrows" class="custom-select w-75" disabled></select><input id="remove" type="button" class="btn btn-danger cross" value="X" disabled />
+					
+					<input id="delete" type="button" class="btn btn-danger w-100 mt-3" value="Delete shape" disabled />
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="frame.js"></script>
+	</body>
+</html>
